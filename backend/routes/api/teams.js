@@ -5,7 +5,7 @@ const { requireAuth } = require('../../utils/auth');
 const router = express.Router();
 
 // Get all teams
-router.get('/', requireAuth, async (req, res) => {
+router.get('/', async (req, res) => {
     const teams = await Team.findAll();
     return res.json({ teams });
 });

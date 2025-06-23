@@ -28,6 +28,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: true
       },
+      color: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       score: {
         type: Sequelize.INTEGER,
         allowNull: true,

@@ -1,13 +1,24 @@
 import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { loginUserThunk } from '../../store/session'; // Assuming you have a login action in your session store
+import { loginUserThunk,  restoreUser} from '../../store/session'; // Assuming you have a login action in your session store
 
 import './LoginFormPage.css';
 
 function LoginFormPage() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const sessionUser = useSelector(state => state.session.user?.user);
+    // Redirect to home if user is already logged in
+
+
+    useEffect(() => {
+        dispatch(restoreUser()); // Restore user session on component mount
+        if (sessionUser) {
+            navigate('/admin'); // Redirect to home page if already logged in
+        }
+    }, [sessionUser, navigate, dispatch]);
 
     // State variables for form inputs and errors
     const [credential, setCredential] = useState('');
@@ -41,7 +52,7 @@ function LoginFormPage() {
         const user = { credential, password };
         try {
             await dispatch(loginUserThunk(user));
-            navigate('/'); // Redirect to home page after successful login
+            navigate('/admin'); // Redirect to home page after successful login
         } catch (error) {
             setErrors({ ...errors, server: 'Login failed. Please check your credentials.' });
         }

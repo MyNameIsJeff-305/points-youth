@@ -1,1 +1,18 @@
-/* TODO: Add sitewide styles */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+
+:root {
+    --bg-color: #1a1a1a;
+    --text-color: #fdf6e3;
+    --accent-color: #a67c52;
+    --font-heading: 'Cinzel', serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* background-color: var(--bg-color); */
+    color: var(--text-color);
+    font-family: var(--font-heading), serif;
+    background-image: url('/public/background.webp');
+    object-fit: cover;
+}

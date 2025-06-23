@@ -27,6 +27,13 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: true
     },
+    color: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isHexColor: true // Ensures the color is a valid hex color code
+      }
+    },
     score: {
       type: DataTypes.INTEGER,
       allowNull: true,
