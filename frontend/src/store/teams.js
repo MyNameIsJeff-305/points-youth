@@ -8,6 +8,7 @@ const DELETE_TEAM = 'teams/DELETE_TEAM';
 const GET_TEAM = 'teams/GET_TEAM';
 const INCREASE_SCORE = 'teams/INCREASE_SCORE';
 const DECREASE_SCORE = 'teams/DECREASE_SCORE';
+const UPDATE_TEAM_SCORE = 'teams/UPDATE_TEAM_SCORE';
 
 // Action Creators
 const getTeams = (teams) => ({
@@ -17,6 +18,12 @@ const getTeams = (teams) => ({
 
 const addTeam = (team) => ({
     type: ADD_TEAM,
+    team,
+});
+
+// eslint-disable-next-line no-unused-vars
+const updateTeamScore = (team) => ({
+    type: UPDATE_TEAM_SCORE,
     team,
 });
 
@@ -115,6 +122,21 @@ export const decreaseTeamScore = (teamId, points) => async (dispatch) => {
     }
 };
 
+export const updateTeamScoreThunk = (teamId, pointsToAdd) => async (dispatch) => {
+    const res = await csrfFetch(`/api/teams/${teamId}/score`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ pointsToAdd }),
+    });
+
+    if (res.ok) {
+        const updatedTeam = await res.json();
+        dispatch({ type: 'UPDATE_TEAM_SCORE', team: updatedTeam });
+    } else {
+        // Handle error (optional)
+    }
+};
+
 // Reducer
 const initialState = {
     allTeams: [],
@@ -155,6 +177,15 @@ const teamsReducer = (state = initialState, action) => {
                     team.id === action.teamId ? { ...team, score: team.score - action.points } : team
                 ),
             };
+        case UPDATE_TEAM_SCORE: {
+            return {
+                ...state,
+                allTeams: {
+                    ...state.allTeams,
+                    [action.team.id]: action.team
+                }
+            };
+        }
         default:
             return state;
     }

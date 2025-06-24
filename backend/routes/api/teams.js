@@ -25,8 +25,8 @@ router.get('/:id', requireAuth, async (req, res) => {
 // Create a new team
 router.post('/', requireAuth, async (req, res) => {
     const { name, description, logoUrl, score = 0 } = req.body;
-    
-    if(!name || !description) {
+
+    if (!name || !description) {
         return res.status(400).json({ message: 'Name and description are required' });
     }
     if (score < 0) {
@@ -63,6 +63,19 @@ router.put('/:id', requireAuth, async (req, res) => {
 
     await team.save();
     return res.json({ team });
+});
+
+// Update the Score of a team
+router.put('/:id/score', async (req, res) => {
+    const team = await Team.findByPk(req.params.id);
+    const { pointsToAdd } = req.body;
+
+    if (!team) return res.status(404).json({ error: 'Team not found' });
+
+    team.score += Number(pointsToAdd);
+    await team.save();
+
+    res.json(team);
 });
 
 // Add Score to a team

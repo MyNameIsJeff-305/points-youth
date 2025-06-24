@@ -52,10 +52,14 @@ export default function HomePage() {
                     <MdRefresh />
                 </button>
                 {user?.user ? (
-                    <div className="welcome-message">
-                        <p>Welcome, {user?.user?.username}!</p>
+                    <div className='admin-links'>
+                        <Link to="/admin" className="login-link">Admin</Link>
                         <p className="logout-link" onClick={logout}>Logout</p>
                     </div>
+                    // <div className="welcome-message">
+                    //     <p>Welcome, {user?.user?.username}!</p>
+
+                    // </div>
                 ) : (
                     <div className='welcome-message'>
                         <Link to="/login" className="login-link">Login</Link>

@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+
+.team-pane {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f5e3cf;
+    border: 4px solid #a67c52;
+    border-radius: 12px;
+    padding: 20px;
+    width: 25%;
+    font-family: 'Cinzel', serif;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    color: #3b2f1c;
+    height: auto;
+    text-align: center;
+    margin: 10px auto;
+}
+
+.team-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.team-pane h2 {
+    font-size: 24px;
+    margin-bottom: 12px;
+    color: #4e361d;
+}
+
+.team-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.team-logo-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 2px solid #c2a167;
+    background: #fff;
+    padding: 6px;
+}
+
+.team-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 18px;
+    width: 100%;
+}
+
+.add-score-pane,
+.subtract-score-pane {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+    width: 100%;
+    max-width: 180px;
+}
+
+.score-input {
+    padding: 10px;
+    border-radius: 6px;
+    border: 2px solid #a67c52;
+    font-size: 14px;
+    width: 100%;
+    font-family: 'Cinzel', serif;
+    background-color: #fffaf2;
+    color: #3b2f1c;
+}
+
+.score-input:focus {
+    outline: none;
+    border-color: #d4b57a;
+    box-shadow: 0 0 8px rgba(166, 124, 82, 0.6);
+}
+
+.increase-score,
+.decrease-score {
+    background-color: #a67c52;
+    border: none;
+    padding: 10px 16px;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Cinzel', serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.increase-score:hover,
+.decrease-score:hover {
+    background-color: #c89f72;
+    transform: scale(1.03);
+}
+
+.increase-score:active,
+.decrease-score:active {
+    transform: scale(0.98);
+    background-color: #916840;
+}
+
+.team-actions input {
+    width: 100%;
+    max-width: 100px;
+    padding: 8px;
+    border: 2px solid #a67c52;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: 'Cinzel', serif;
+    background-color: #fffaf2;
+    color: #3b2f1c;
+}
+
+.team-actions input:focus {
+    outline: none;
+    border-color: #d4b57a;
+    box-shadow: 0 0 8px rgba(166, 124, 82, 0.6);
+}
+
+.team-actions button {
+    background-color: #a67c52;
+    border: none;
+    padding: 8px 20px;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Cinzel', serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.team-actions button:hover {
+    background-color: #c89f72;
+    transform: scale(1.03);
+}
+
+.team-actions button:active {
+    transform: scale(0.98);
+    background-color: #916840;
+}
+
+.team-actions button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* ----------------------- */
+/* 🌐 Responsive Styling */
+/* ----------------------- */
+@media (max-width: 768px) {
+    .team-pane {
+        max-width: 90%;
+    }
+
+    .team-actions {
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+    }
+
+    .team-pane h2 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-pane {
+        padding: 15px;
+    }
+
+    .team-logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .score-input {
+        font-size: 12px;
+    }
+
+    .team-actions button {
+        font-size: 16px;
+    }
+}

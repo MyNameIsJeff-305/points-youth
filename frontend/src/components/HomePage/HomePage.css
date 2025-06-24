@@ -58,11 +58,13 @@
     margin-top: 20px;
     cursor: pointer;
 }
+
 .logout-link:hover {
     text-decoration: underline;
     color: #c89f72;
     cursor: pointer;
 }
+
 .logout-link:active {
     color: #916840;
 }
@@ -130,7 +132,26 @@
     color: #fdf6e3;
     text-decoration: none;
     font-family: 'Cinzel', serif;
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 20px;
     cursor: pointer;
+}
+
+.admin-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* align-items: center; */
+    align-content: center;
+    gap: 20px;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+    color: #c89f72;
+    cursor: pointer;
+}
+
+.login-link:active {
+    color: #916840;
 }
