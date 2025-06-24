@@ -13,32 +13,32 @@ module.exports = {
     try {
       await Team.bulkCreate([
         {
-          name: "Gryffindor",
-          description: "Known for bravery and courage, Gryffindor is one of the four houses at Hogwarts School of Witchcraft and Wizardry.",
-          color: "#740001",
-          logoUrl: "https://static.wikia.nocookie.net/harrypotter/images/b/b1/Gryffindor_ClearBG.png",
-          score: 100
+          name: "Fenix",
+          description: "El Resplandor de Oriente",
+          color: "#b40f01",
+          logoUrl: "https://mybnbbucket.s3.us-east-2.amazonaws.com/FENIX.png",
+          score: 0
         },
         {
-          name: "Hufflepuff",
-          description: "Hufflepuff is known for its members' dedication, hard work, and loyalty. It is one of the four houses at Hogwarts.",
-          color: "#ecb939",
-          logoUrl: "https://static.wikia.nocookie.net/harrypotter/images/0/06/Hufflepuff_ClearBG.png",
-          score: 80
+          name: "Grifo",
+          description: "El Guardián de los Tesoros",
+          color: "#d49710",
+          logoUrl: "https://mybnbbucket.s3.us-east-2.amazonaws.com/GRIFO.png",
+          score: 0
         },
         {
-          name: "Ravenclaw",
-          description: "Ravenclaw values intelligence, creativity, and wisdom. It is one of the four houses at Hogwarts.",
-          color: "#0e1a4d",
-          logoUrl: "https://static.wikia.nocookie.net/harrypotter/images/7/71/Ravenclaw_ClearBG.png",
-          score: 90
+          name: "Leviatan",
+          description: "El Despertar de las Profundidades",
+          color: "#125185",
+          logoUrl: "https://mybnbbucket.s3.us-east-2.amazonaws.com/LEVIATAN.png",
+          score: 0
         },
         {
-          name: "Slytherin",
-          description: "Slytherin is known for ambition, cunning, and resourcefulness. It is one of the four houses at Hogwarts.",
-          color: "#1a472a",
-          logoUrl: "https://static.wikia.nocookie.net/harrypotter/images/0/00/Slytherin_ClearBG.png",
-          score: 110
+          name: "Pegasus",
+          description: "El Aliento de los Vientos",
+          color: "#595857",
+          logoUrl: "https://mybnbbucket.s3.us-east-2.amazonaws.com/PEGASUS.png",
+          score: 0
         }
       ], options);
     } catch (error) {
