@@ -1,5 +1,7 @@
 'use strict';
 
+const { Team } = require('../models');
+
 let options = {};
 if (process.env.NODE_ENV === 'production') {
   options.schema = process.env.SCHEMA;  // define your schema in options object
@@ -9,7 +11,7 @@ if (process.env.NODE_ENV === 'production') {
 module.exports = {
   async up (queryInterface, Sequelize) {
     try {
-      await queryInterface.bulkInsert('Teams', [
+      await Team.bulkCreate([
         {
           name: "Gryffindor",
           description: "Known for bravery and courage, Gryffindor is one of the four houses at Hogwarts School of Witchcraft and Wizardry.",
