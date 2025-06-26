@@ -14,5 +14,7 @@ body {
     color: var(--text-color);
     font-family: var(--font-heading), serif;
     background-image: url('/public/background.webp');
-    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
