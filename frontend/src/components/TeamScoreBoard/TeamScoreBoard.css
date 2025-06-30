@@ -1,0 +1,59 @@
+/* === MAIN CONTAINER === */
+.team-score-board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Optional: Add a transition effect */
+.team-score-board > div {
+    transition: transform 0.3s ease;
+}
+
+.team-score-board > div:hover {
+    transform: scale(1.05);
+}
+
+/* === RESPONSIVE LAYOUT === */
+@media (max-width: 768px) {
+    .team-score-board {
+        gap: 30px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-score-board {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .team-score-board > div {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Mobile Landscape */
+@media (max-width: 1024px) and (orientation: landscape) {
+    .team-score-board {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 40px;
+        max-width: fit-content;
+        row-gap: 50px;
+    }
+
+    .team-score-board > div {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}

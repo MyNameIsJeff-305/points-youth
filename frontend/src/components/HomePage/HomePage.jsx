@@ -42,26 +42,24 @@ export default function HomePage() {
             <div className='header'>
                 <h1>Semana de la Juventud</h1>
                 <tittle>Más allá del espejo: Jóvenes con identidad en un mundo sin dirección</tittle>
-                <span>Entonces tus oídos oirán a tus espaldas palabra, diciendo: Este es el camino, andad por él, ya sea que vayáis a la derecha o a la izquierda. <br></br>Isaías 30:21</span>
             </div>
-            <div>
+            <div className='scoreboard'>
                 <TeamScoreBoard ogTeams={teams} />
             </div>
             <div className='footer'>
-                <button onClick={() => dispatch(fetchTeams())}>
-                    <MdRefresh />
-                </button>
+                <div className='button-container'>
+                    <button onClick={() => dispatch(fetchTeams())}>
+                        <MdRefresh />
+                    </button>
+                </div>
                 {user?.user ? (
                     <div className='admin-links'>
                         <Link to="/admin" className="login-link">Admin</Link>
                         <p className="logout-link" onClick={logout}>Logout</p>
                     </div>
-                    // <div className="welcome-message">
-                    //     <p>Welcome, {user?.user?.username}!</p>
-
-                    // </div>
                 ) : (
                     <div className='welcome-message'>
+
                         <Link to="/login" className="login-link">Login</Link>
                     </div>
                 )}

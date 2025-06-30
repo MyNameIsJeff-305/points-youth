@@ -3,14 +3,14 @@ import TeamScoreScale from './TeamScoreScale';
 
 import './TeamScoreBoard.css';
 
-const TeamScoreBoard = ({ogTeams}) => {
+const TeamScoreBoard = ({ ogTeams }) => {
     // eslint-disable-next-line no-unused-vars
     const [teams, setTeams] = useState(ogTeams);
 
     const tempMax = Math.max(...teams.map((team) => team.score), 1); // avoid div by 0
 
     return (
-        <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
+        <div className="team-score-board">
             {teams.map((team) => (
                 <div key={team.name}>
                     <TeamScoreScale

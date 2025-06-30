@@ -1,10 +1,10 @@
+/* === GENERAL LAYOUT === */
 .homepage {
     display: flex;
-    height: 100vh;
+    width: 100%;
     flex-direction: column;
     align-items: center;
     align-content: space-between;
-    padding: 20px;
 }
 
 .loading {
@@ -15,6 +15,66 @@
     height: 100vh;
 }
 
+.header,
+.footer,
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(26, 26, 26, 0.3);
+}
+
+.header {
+    justify-content: space-between;
+    column-gap: 5px;
+}
+
+.footer,
+.login {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.scoreboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scale: 1.4;
+    margin-top: 100px;
+    font-family: 'Cinzel', serif;
+    color: #fdf6e3;
+    gap: 50px;
+}
+
+/* === TYPOGRAPHY === */
+.homepage h1,
+.homepage tittle,
+.homepage span {
+    font-family: 'Cinzel', serif;
+    color: #fdf6e3;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+.homepage h1 {
+    font-size: 30px;
+}
+
+.homepage tittle {
+    font-size: 18px;
+}
+
+.homepage span {
+    font-size: 10px;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* === BUTTON STYLES === */
 .homepage button {
     background-color: #a67c52;
     /* wood/gold tone */
@@ -43,6 +103,7 @@
     background-color: #916840;
 }
 
+/* === MESSAGES & LINKS === */
 .welcome-message {
     display: flex;
     flex-direction: column;
@@ -50,108 +111,234 @@
     margin-bottom: 20px;
 }
 
-.logout-link {
-    color: #fdf6e3;
-    text-decoration: none;
-    font-family: 'Cinzel', serif;
-    font-size: 18px;
-    margin-top: 20px;
-    cursor: pointer;
-}
-
-.logout-link:hover {
-    text-decoration: underline;
-    color: #c89f72;
-    cursor: pointer;
-}
-
-.logout-link:active {
-    color: #916840;
-}
-
-.homepage h1 {
-    font-family: 'Cinzel', serif;
-    font-size: 30px;
-    color: #fdf6e3;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-bottom: 10px;
-}
-
-.homepage tittle {
-    font-family: 'Cinzel', serif;
-    font-size: 18px;
-    color: #fdf6e3;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-bottom: 10px;
-}
-
-.homepage span {
-    font-family: 'Cinzel', serif;
-    font-size: 10px;
-    color: #fdf6e3;
-    text-align: center;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.header {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    column-gap: 5px;
-    padding: 5px 20px 20px 20px;
-    background-color: rgba(26, 26, 26, 0.3);
-}
-
-.footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 10px;
-    background-color: rgba(26, 26, 26, 0.3);
-    position: absolute;
-    bottom: 0;
-}
-
-.login {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 10px;
-    background-color: rgba(26, 26, 26, 0.3);
-    position: absolute;
-    bottom: 0;
-}
-
+.logout-link,
 .login-link {
     color: #fdf6e3;
     text-decoration: none;
     font-family: 'Cinzel', serif;
-    font-size: 16px;
-    margin-top: 20px;
     cursor: pointer;
+    margin-top: 20px;
 }
 
+.logout-link {
+    font-size: 18px;
+}
+
+.login-link {
+    font-size: 16px;
+}
+
+/* === LINK STATES === */
+.logout-link:hover,
+.login-link:hover {
+    text-decoration: underline;
+    color: #c89f72;
+}
+
+.logout-link:active,
+.login-link:active {
+    color: #916840;
+}
+
+/* === ADMIN AREA === */
 .admin-links {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /* align-items: center; */
     align-content: center;
     gap: 20px;
 }
 
-.login-link:hover {
-    text-decoration: underline;
-    color: #c89f72;
-    cursor: pointer;
+/* === MEDIA QUERIES FOR RESPONSIVENESS === */
+/* Tablet landscape */
+@media (max-width: 1080px) {
+    .homepage {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .homepage h1 {
+        font-size: 28px;
+    }
+
+    .homepage tittle {
+        font-size: 18px;
+    }
+
+    .homepage button {
+        font-size: 22px;
+        padding: 8px 16px;
+    }
+
+    .scoreboard {
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+        margin-top: 0px;
+        scale: 1;
+    }
+
+    .admin-links {
+        flex-direction: row;
+        gap: 16px;
+        padding-right: 40px;
+    }
+
+    .footer {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0px 20px 10px 20px;
+    }
 }
 
-.login-link:active {
-    color: #916840;
+/* Tablets and below */
+@media (max-width: 810px) {
+    .homepage {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .homepage h1 {
+        font-size: 24px;
+    }
+
+    .homepage tittle {
+        font-size: 16px;
+    }
+
+    .homepage button {
+        font-size: 20px;
+        padding: 6px 12px;
+    }
+
+    .scoreboard {
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+        margin-top: 100px;
+        scale: 1;
+    }
+
+    .admin-links {
+        flex-direction: row;
+        gap: 12px;
+        padding-right: 40px;
+    }
+
+    .footer {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0px 20px 10px 20px;
+    }
+
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .homepage h1 {
+        font-size: 20px;
+    }
+
+    .homepage tittle {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .homepage span {
+        font-size: 9px;
+    }
+
+    .homepage button {
+        font-size: 18px;
+        padding: 6px 10px;
+        gap: 6px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .scoreboard {
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+        margin-top: 100px;
+        scale: 1;
+    }
+
+    .admin-links {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .welcome-message {
+        margin-bottom: 15px;
+    }
+
+    .header,
+    .footer,
+    .login {
+        flex-direction: column;
+        align-items: center;
+        align-content: space-between;
+    }
+
+    .footer {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0px 20px 10px 20px;
+    }
+}
+
+/*Mobile Phones in Landscape */
+@media (max-width: 960px) and (orientation: landscape) {
+    .homepage {
+        width: 100%;
+        height: fit-content;
+    }
+    .homepage h1 {
+        font-size: 18px;
+    }
+    .homepage tittle {
+        font-size: 12px;
+    }
+    .homepage span {
+        font-size: 8px;
+    }
+    .homepage button {
+        font-size: 16px;
+        padding: 5px 8px;
+        gap: 4px;
+        width: 100%;
+        justify-content: center;
+    }
+    .scoreboard {
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+        margin-top: 10px;
+    }
+    .admin-links {
+        flex-direction: row;
+        gap: 16px;
+    }
+    .welcome-message {
+        margin-bottom: 10px;
+    }
+    .header,
+    .footer,
+    .login {
+        flex-direction: column;
+        align-items: center;
+        align-content: space-between;
+    }
+
+    .footer {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0px 20px 10px 20px;
+    }
 }
